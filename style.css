@@ -3,7 +3,6 @@ body {
   width: 100vw;
 
   opacity: 0.98;
-  background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 3.5px, #000000 3.5px, #000000 25px);
 }
 
 #app {

@@ -12,13 +12,20 @@
     <div id="app">
       <h1 id="title">Coding Environment</h1>
       <div id="environment">
-        <div id="input">
-          <textarea id="codeInput" placeholder="code here..."></textarea>
-        </div>
+        <div id="input"></div>
         <div id="output">output</div>
       </div>
     </div>
-
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="mode/python/python.js"></script>
+    <script>
+        var myCodeMirror = CodeMirror(document.getElementById("input"), {
+            value: "print(\"hello world\")\nmy_set = set()\nmy_list = []\nfor x in range(5):\n\tprint(x)",
+            mode:  "python"
+        });
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
