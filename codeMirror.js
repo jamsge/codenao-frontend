@@ -13,6 +13,6 @@ myCodeMirror.setSize("100%", "100%");
 
 //changes the language mode of the code editor
 function changeLanguage(lang) {
-  console.log(lang);
+  console.log("Language changed to: " lang);
   myCodeMirror.setOption("mode", lang);
 }
