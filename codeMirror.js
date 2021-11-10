@@ -11,8 +11,39 @@ var myCodeMirror = CodeMirror(document.getElementById("input"), {
 });
 myCodeMirror.setSize("100%", "100%");
 
+//initializes language state
+let lang = "python";
+
 //changes the language mode of the code editor
-function changeLanguage(lang) {
-  console.log("Language changed to: ", lang);
+function changeLanguage(newLang) {
+  lang = newLang;
+  console.log("Language changed to:", lang);
   myCodeMirror.setOption("mode", lang);
+}
+
+//saves on site unload
+window.addEventListener(
+  "beforeunload",
+  (event) => {
+    localStorage.setItem("language", lang);
+    localStorage.setItem("inputText", myCodeMirror.getValue());
+  },
+  false
+);
+
+//loads on site load
+if (localStorage.getItem("language") != null) {
+  //gets stored language
+  let storedLang = localStorage.getItem("language");
+  //sets stored language
+  changeLanguage(localStorage.getItem("language"));
+  //updates htmls elector
+  let selector = document.getElementById("languageSelector");
+  for (let i = 0; i < selector.options.length; i++) {
+    let option = selector.options[i];
+    if (option.value == storedLang) selector.selectedIndex = i;
+  }
+}
+if (localStorage.getItem("inputText") != null) {
+  myCodeMirror.setOption("value", localStorage.getItem("inputText"));
 }
