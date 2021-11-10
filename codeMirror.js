@@ -9,3 +9,8 @@ var myCodeMirror = CodeMirror(document.getElementById("input"), {
   viewportMargin: Infinity,
 });
 myCodeMirror.setSize("100%", "100%");
+
+function changeLanguage(lang) {
+  console.log(lang);
+  myCodeMirror.setOption("mode", lang);
+}
