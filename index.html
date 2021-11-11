@@ -23,15 +23,26 @@
     <div id="app">
       <div id="environment">
         <div id="input">
-          <label for="languageSelector">Language: </label>
-          <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
-            <option class="languageSelect" value="python" default>Python</option>
-            <option class="languageSelect" value="javascript">JavaScript</option>
-          </select>
-          <button id="run">Run</button>
         </div>
         <div id="output">
-          <textarea placeholder="Run code by clicking the RUN button" id="outputText" readonly></textarea>
+
+          <div class="container" style="padding-top:5px;padding-bottom:5px;">
+            <div class="row">
+              <div class="col-9">
+                <label for="languageSelector">Language: </label>
+                <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
+                  <option class="languageSelect" value="python" default>Python</option>
+                  <option class="languageSelect" value="javascript">JavaScript</option>
+                </select>
+                <button type="button" class="btn btn-success" id="run" >Run</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <textarea placeholder="Run code by clicking the RUN button" id="outputText" readonly></textarea>
+          </div>
+
         </div>
       </div>
     </div>
