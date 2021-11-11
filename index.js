@@ -1,5 +1,5 @@
 //sets up code editor
-var myCodeMirror = CodeMirror(document.getElementById("input"), {
+let myCodeMirror = CodeMirror(document.getElementById("input"), {
   value: 'print("hello world")\nmy_set = set()\nmy_list = []\nfor x in range(5):\n\tprint(x)',
   mode: "python",
   lineNumbers: true,
@@ -47,3 +47,27 @@ if (localStorage.getItem("language") != null) {
 if (localStorage.getItem("inputText") != null) {
   myCodeMirror.setOption("value", localStorage.getItem("inputText"));
 }
+
+//query backend
+function query() {
+  fetch("http://127.0.0.1:3000/submit", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      language: lang,
+      code: myCodeMirror.getValue(),
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      document.getElementById("outputText").value = `${data.success ? "Code Successfully Run" : "CodeFailed"}\nInput: ${
+        data.input
+      }\nOutput: ${data.output}\nTime: ${data.time}`;
+    });
+}
+//sets up run button
+document.getElementById("run").addEventListener("click", query);

@@ -23,13 +23,12 @@
     <div id="app">
       <div id="environment">
         <div id="input">
-          <form>
-            <label for="languageSelector">Language: </label>
-            <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
-              <option class="languageSelect" value="python" default>Python</option>
-              <option class="languageSelect" value="javascript">JavaScript</option>
-            </select>
-          </form>
+          <label for="languageSelector">Language: </label>
+          <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
+            <option class="languageSelect" value="python" default>Python</option>
+            <option class="languageSelect" value="javascript">JavaScript</option>
+          </select>
+          <button id="run">Run</button>
         </div>
         <div id="output">
           <textarea placeholder="Run code by clicking the RUN button" id="outputText" readonly></textarea>
