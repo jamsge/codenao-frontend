@@ -44,9 +44,8 @@ body {
 
 #output {
   border-left: 1px solid gray;
-  min-width: 30%;
+  min-width: 40vw;
   box-sizing: border-box;
-  padding: 5px;
   height: 91vh;
 }
 
