@@ -7,7 +7,7 @@ body {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  height:100%;
+  height: 100%;
   background-color: white;
   opacity: 1;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 #navigation {
-  height:9vh
+  height: 9vh;
 }
 
 #codeInput {
@@ -47,6 +47,7 @@ body {
   min-width: 30%;
   box-sizing: border-box;
   padding: 5px;
+  height: 91vh;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -56,8 +57,8 @@ body {
   background-clip: content-box;
 }
 
-.CodeMirror{
-  width:100%;
+.CodeMirror {
+  width: 100%;
   height: auto;
   margin: 0em;
   overflow-y: auto;
@@ -66,4 +67,5 @@ body {
 #outputText {
   width: 100%;
   height: 100%;
+  resize: none;
 }
