@@ -39,9 +39,6 @@
 
         <div class="dragbar" id="dragbar"></div>
         <div class="panel-right" id="output">
-          <div class="container" style="padding-top: 5px; padding-bottom: 5px">
-            <div class="row">
-              <div class="col-9">
                 <label for="languageSelector">Language: </label>
                 <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
                   <option class="languageSelect" value="python" default>Python</option>
@@ -49,12 +46,8 @@
                   <option class="languageSelect" value="clike">C++</option>
                 </select>
                 <button type="button" class="btn btn-success" id="run">Run</button>
-              </div>
-            </div>
-          </div>
-
           <div class="container">
-            <textarea placeholder="Run code by clicking the RUN button" id="outputText" readonly></textarea>
+            <textarea readonly placeholder="Run code by clicking the RUN button" id="outputText" style="min-width: 300px"></textarea>
           </div>
         </div>
       </div>

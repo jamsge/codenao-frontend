@@ -33,10 +33,18 @@ function changeTheme(newTheme) {
 var left = document.getElementById('input');
 var right = document.getElementById('drag-right');
 var bar = document.getElementById('dragbar');
+var outputText = document.getElementById('outputText');
+var app = document.getElementById("app")
+var dragContainer = document.getElementById("drag-container")
+left.style.width = (window.innerWidth*.7 - bar.offsetWidth / 2) + 'px';
+outputText.style.width = window.innerWidth - (window.innerWidth*.7 - bar.offsetWidth / 2) -60 + 'px'
 
 const drag = (e) => {
   document.selection ? document.selection.empty() : window.getSelection().removeAllRanges();
-  left.style.width = (e.pageX - bar.offsetWidth / 2) + 'px';
+  left.style.width = (e.clientX - bar.offsetWidth / 2) + 'px';
+
+  // arbitrary -60 is not ideal and may not work on all machines?
+  outputText.style.width = window.innerWidth - (e.clientX - bar.offsetWidth / 2) -60 + 'px'
 }
 
 bar.addEventListener('mousedown', () => {
