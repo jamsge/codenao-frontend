@@ -51,7 +51,7 @@ bar.addEventListener('mousedown', () => {
   document.addEventListener('mousemove', drag);
 });
 
-bar.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', () => {
   document.removeEventListener('mousemove', drag);
 });
 
