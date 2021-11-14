@@ -29,6 +29,14 @@
           <div class="container" style="padding-top:5px;padding-bottom:5px;">
             <div class="row">
               <div class="col-9">
+                <label for="themeSelector">Theme: </label>
+                <select name="themeSelector" id="themeSelector" onchange="changeTheme(this.value)">
+                  <option value="default" default>default</option>
+                  <option value="3024-day">3024-day</option>
+                  <option value="3024-night">3024-night</option>
+                  <option value="abbott">abbott</option>
+                  <option value="abcdef">abcdef</option>
+                </select>
                 <label for="languageSelector">Language: </label>
                 <select name="languageSelector" id="languageSelector" onchange="changeLanguage(this.value)">
                   <option class="languageSelect" value="python" default>Python</option>

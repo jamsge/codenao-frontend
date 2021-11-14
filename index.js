@@ -2,6 +2,7 @@
 let myCodeMirror = CodeMirror(document.getElementById("input"), {
   value: 'print("hello world")\nmy_set = set()\nmy_list = []\nfor x in range(5):\n\tprint(x)',
   mode: "python",
+  theme: "default",
   lineNumbers: true,
   indentWithTabs: true,
   lineWrapping: true,
@@ -19,6 +20,13 @@ function changeLanguage(newLang) {
   lang = newLang;
   console.log("Language changed to:", lang);
   myCodeMirror.setOption("mode", lang);
+}
+
+// changes theme of the code editor
+function changeTheme(newTheme) {
+  const theme = newTheme;
+  console.log("Theme changed to:", theme);
+  myCodeMirror.setOption("theme", theme)
 }
 
 //saves on site unload
