@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme/3024-day.css" />
+    <link rel="stylesheet" href="theme/3024-night.css" />
+    <link rel="stylesheet" href="theme/abbott.css" />
+    <link rel="stylesheet" href="theme/abcdef.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,11 +26,9 @@
   <body>
     <div id="app">
       <div id="environment">
-        <div id="input">
-        </div>
+        <div id="input"></div>
         <div id="output">
-
-          <div class="container" style="padding-top:5px;padding-bottom:5px;">
+          <div class="container" style="padding-top: 5px; padding-bottom: 5px">
             <div class="row">
               <div class="col-9">
                 <label for="themeSelector">Theme: </label>
@@ -43,7 +45,7 @@
                   <option class="languageSelect" value="javascript">JavaScript</option>
                   <option class="languageSelect" value="clike">C++</option>
                 </select>
-                <button type="button" class="btn btn-success" id="run" >Run</button>
+                <button type="button" class="btn btn-success" id="run">Run</button>
               </div>
             </div>
           </div>
@@ -51,7 +53,6 @@
           <div class="container">
             <textarea placeholder="Run code by clicking the RUN button" id="outputText" readonly></textarea>
           </div>
-
         </div>
       </div>
     </div>
